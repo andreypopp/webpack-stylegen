@@ -1,9 +1,11 @@
 'use strict';
 
+var rewrite = require('./rewrite');
+
 module.exports = function style(src) {
   this.cacheable();
   if (/ReactStyle/.exec(src)) {
-    return src.replace(/require\('/g, "require('" + require.resolve('./reset') + '!');
+    return rewrite.call(this, src);
   } else {
     return 'module.exports = [];';
   }

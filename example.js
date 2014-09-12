@@ -1,3 +1,4 @@
+var React = require('react');
 var ReactStyle = 1;
 require('./dep-with-style');
 var dep = require('./dep');

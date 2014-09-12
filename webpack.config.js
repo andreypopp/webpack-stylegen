@@ -21,5 +21,13 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('bundle.css')
-  ]
+  ],
+  node: {
+    console: false,
+    process: false,
+    global: true,
+    buffer: true,
+    __filename: "mock",
+    __dirname: "mock"
+  }
 };

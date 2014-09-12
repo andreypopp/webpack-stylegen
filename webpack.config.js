@@ -1,6 +1,5 @@
-
-var multi = require('multi-loader');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ReactStyleLoader = require('./loader');
 
 module.exports = {
   entry: "./example.js",
@@ -14,16 +13,13 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: [
-          multi(
-            ExtractTextPlugin.extract('style-loader', require.resolve('./loader/style')),
-            require.resolve('./loader/source')
-          ),
+          ReactStyleLoader(),
           'jsx-loader?harmony'
         ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin('bundle.css')
   ]
 };

@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function style(src) {
   this.cacheable();
   if (/ReactStyle/.exec(src)) {

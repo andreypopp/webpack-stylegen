@@ -7,5 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^0.8.0",
+    "extract-text-webpack-plugin": "^0.3.0",
+    "jsx-loader": "^0.11.0",
+    "multi-loader": "^0.1.0",
+    "react": "^0.11.1",
+    "style-loader": "^0.8.0",
+    "webpack": "^1.4.0-beta6"
+  }
 }

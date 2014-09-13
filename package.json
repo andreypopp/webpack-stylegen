@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "css-loader": "^0.8.0",
+    "escope": "^1.0.1",
+    "estraverse": "^1.5.1",
     "extract-text-webpack-plugin": "^0.3.0",
     "jsx-loader": "^0.11.0",
     "multi-loader": "^0.1.0",

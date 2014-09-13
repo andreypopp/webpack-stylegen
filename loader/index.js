@@ -1,12 +1,9 @@
 'use strict';
 
-var multi = require('multi-loader');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var style             = require.resolve('./style');
+var styleEntry        = require.resolve('./style-entry');
 
-module.exports = function make(before) {
-  before = before || require.resolve('style-loader');
-  return multi(
-    ExtractTextPlugin.extract(before, require.resolve('./style')),
-    require.resolve('./source')
-  );
+module.exports = function ReactStyleLoader() {
+  return ExtractTextPlugin.extract('style-loader', style) + '!' + styleEntry;
 };

@@ -3,11 +3,11 @@
  */
 'use strict';
 
-var ReactStyle = require('../lib/index');
 var React      = require('react');
-var Button     = require('./lib/Button');
+var ReactStyle = require('react-style');
+var Icon       = require('react-fa');
+var Button     = require('./Button');
 var utils      = require('./utils');
-var Block      = require('./lib/layout/Block');
 
 var Application = React.createClass({
 
@@ -19,13 +19,20 @@ var Application = React.createClass({
     return (
       <div styles={this.style}>
         Applicaiton
-        <div styles={ReactStyle({backgroundColor: 'orange'})}>
-          dynamic
-        </div>
+        <Button primary>
+          <Icon name="cog" /> OK
+        </Button>
+        <Button>
+          <Icon name="remove" /> Cancel
+        </Button>
       </div>
     );
   }
 
 });
+
+if (typeof window !== 'undefined') {
+  React.renderComponent(<Application />, document.getElementById('app'));
+}
 
 module.exports = Application;

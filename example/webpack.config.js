@@ -1,5 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ReactStyleLoader = require('./loader');
+var ReactStyleLoader  = require('../lib/loader');
 
 module.exports = {
   entry: [
@@ -8,8 +8,8 @@ module.exports = {
   ],
   output: {
     filename: "bundle.js",
-    path: __dirname + "/assets",
-    publicPath: "assets/"
+    path: __dirname + "/build",
+    publicPath: "build/"
   },
   module: {
     loaders: [

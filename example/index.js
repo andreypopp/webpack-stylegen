@@ -7,11 +7,13 @@ var utils = require('./utils');
 
 var Application = React.createClass({
 
-  style: ReactStyle.declareStyleClass(function() {
+  style: ReactStyle.declareStyle(function() {
     return {backgroundColor: utils};
-  }, 'Application'),
+  }),
 
-  render: function() {}
+  render: function() {
+
+  }
 
 });
 

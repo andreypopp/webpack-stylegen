@@ -3,9 +3,13 @@ var React = require('react');
 
 var Button = React.createClass({
 
-  style: ReactStyle.declareStyleClass(function() {
+  style: ReactStyle.declareStyle(function() {
     return {color: 'red'};
-  }, 'Button'),
+  }),
+
+  hoverStyle: ReactStyle.declareStyle(function() {
+    return {color: 'white'};
+  }),
 
   render: function() {}
 

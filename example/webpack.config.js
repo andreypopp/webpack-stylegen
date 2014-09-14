@@ -3,8 +3,8 @@ var ReactStyleLoader  = require('../lib/loader');
 
 module.exports = {
   entry: [
-    './example.js',
-    ReactStyleLoader() + '!./example.js',
+    './index.js',
+    ReactStyleLoader() + '!./index.js',
   ],
   output: {
     filename: "bundle.js",

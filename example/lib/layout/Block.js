@@ -1,18 +1,18 @@
-var ReactStyle = require('../lib/index');
+var ReactStyle = require('../../../lib/index');
 var React = require('react');
 
-var Button = React.createClass({
+var Block = React.createClass({
 
   style: ReactStyle.declareStyle(function() {
-    return {color: 'red'};
+    return {left: 2};
   }),
 
   hoverStyle: ReactStyle.declareStyle(function() {
-    return {color: 'white'};
+    return {top: 1};
   }),
 
   render: function() {}
 
 });
 
-module.exports = Button;
+module.exports = Block;

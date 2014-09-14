@@ -1,5 +1,5 @@
 build::
-	../node_modules/.bin/webpack
+	../node_modules/.bin/webpack --hide-modules
 
 clean::
 	rm -rf assets/

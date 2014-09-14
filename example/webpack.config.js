@@ -1,11 +1,7 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ReactStyleLoader  = require('../lib/loader');
+var ReactStylePlugin = require('../lib/webpack');
 
 module.exports = {
-  entry: [
-    './index.js',
-    ReactStyleLoader() + '!./index.js',
-  ],
+  entry: './index.js',
   output: {
     filename: "bundle.js",
     path: __dirname + "/build",
@@ -15,11 +11,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'jsx-loader?harmony'
+        loaders: [
+          ReactStylePlugin.loader(),
+          'jsx-loader?harmony'
+        ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('bundle.css')
+    new ReactStylePlugin('bundle.css')
   ]
 };

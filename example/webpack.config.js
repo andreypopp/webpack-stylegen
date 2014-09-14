@@ -1,6 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ReactStyleLoader  = require('../lib/loader');
-var extract           = require.resolve('../lib/loader/extract');
 
 module.exports = {
   entry: [
@@ -16,10 +15,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [
-          extract,
-          'jsx-loader?harmony'
-        ]
+        loader: 'jsx-loader?harmony'
       }
     ]
   },

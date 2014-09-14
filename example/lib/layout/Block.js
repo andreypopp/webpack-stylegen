@@ -1,17 +1,24 @@
+/**
+ * @jsx React.DOM
+ */
+'use strict';
+
 var ReactStyle = require('../../../lib/index');
 var React = require('react');
 
+var style = ReactStyle.create({
+  left: 2
+});
+
 var Block = React.createClass({
 
-  style: ReactStyle.declareStyle(function() {
-    return {left: 2};
+  hoverStyle: ReactStyle.create({
+    top: 1
   }),
 
-  hoverStyle: ReactStyle.declareStyle(function() {
-    return {top: 1};
-  }),
-
-  render: function() {}
+  render: function() {
+    return <div styles={[this.hoverStyle, style]}>Block</div>;
+  }
 
 });
 

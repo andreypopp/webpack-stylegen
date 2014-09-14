@@ -1,17 +1,20 @@
+/**
+ * @jsx React.DOM
+ */
+'use strict';
+
 var ReactStyle = require('../../lib/index');
 var React = require('react');
 
 var Button = React.createClass({
 
-  style: ReactStyle.declareStyle(function() {
-    return {color: 'red'};
+  style: ReactStyle.create({
+    color: 'red'
   }),
 
-  hoverStyle: ReactStyle.declareStyle(function() {
-    return {color: 'white'};
-  }),
-
-  render: function() {}
+  render: function() {
+    return <button styles={this.style}>Click me</button>;
+  }
 
 });
 

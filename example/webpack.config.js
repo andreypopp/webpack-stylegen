@@ -9,7 +9,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react-style': require.resolve('../lib/index')
+      'react-style/lib/utils$': require.resolve('../lib/utils'),
+      'react-style$': require.resolve('../lib/index')
     }
   },
   module: {

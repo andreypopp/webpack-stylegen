@@ -5,6 +5,7 @@
 
 var React       = require('react');
 var ReactStyle  = require('react-style');
+var {rgba}      = require('react-style/lib/utils');
 
 var baseStyles = ReactStyle({
   display: 'inline-block',
@@ -17,25 +18,31 @@ var baseStyles = ReactStyle({
   userSelect: 'none'
 });
 
+var activeStyles = ReactStyle({
+  boxShadow: '0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset'
+});
+
+var hoverStyles = ReactStyle({
+  backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))'
+});
+
+var focusStyles = ReactStyle({
+  backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))',
+  outline: 'none'
+});
+
 var styles = ReactStyle({
   fontFamily: 'inherit',
   fontSize: '100%',
   padding: '0.5em 1em',
-  color: 'rgba(0, 0, 0, 0.80)',
+  color: rgba(0, 0, 0, 0.80),
   border: 'none rgba(0, 0, 0, 0)',
   backgroundColor: '#E6E6E6',
   textDecoration: 'none',
   borderRadius: '2px',
-  ':active': {
-    boxShadow: '0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset'
-  },
-  ':hover': {
-    backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))'
-  },
-  ':focus': {
-    backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))',
-    outline: 'none'
-  }
+  onActive: activeStyles,
+  onHover: hoverStyles,
+  onFocus: focusStyles
 });
 
 var primaryStyles = ReactStyle({

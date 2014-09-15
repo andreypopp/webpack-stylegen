@@ -5,11 +5,12 @@
 
 var React           = require('react');
 var ReactStyle      = require('react-style');
+var Button          = require('./Button');
 
 var ButtonGroup = React.createClass({
 
   childStyles: {
-    Button: ReactStyle({
+    [Button.styleIndex]: ReactStyle({
       margin: 0,
       notLastChild: {
         notFirstChild: {

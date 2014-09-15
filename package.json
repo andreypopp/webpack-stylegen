@@ -9,6 +9,7 @@
     "react": "^0.11.1"
   },
   "dependencies": {
+    "es6-computed-properties": "0.0.1",
     "recast": "^0.7.2"
   }
 }

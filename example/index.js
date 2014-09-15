@@ -52,13 +52,9 @@ var Application = React.createClass({
   }),
 
   render() {
-    var styles = [
-      this.style,
-      ReactStyle({textAlign: this.state.textAlign})
-    ];
-    return ReactStyle.style(styles,
+    return ReactStyle.style(this.style,
       <div>
-        <h1>Applicaiton</h1>
+        <h1 styles={ReactStyle({textAlign: this.state.textAlign})}>Applicaiton</h1>
         <Button styles={Button.styles.success}>
           <Icon name="cog" /> OK
         </Button>

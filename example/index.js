@@ -5,17 +5,18 @@
 
 require('normalize.css/normalize.css');
 
-var React      = require('react');
-var ReactStyle = require('react-style');
-var {rgb}      = require('react-style/lib/utils');
-var Icon       = require('react-fa');
-var Button     = require('./Button');
+var React       = require('react');
+var ReactStyle  = require('react-style');
+var {rgb}       = require('react-style/lib/utils');
+var Icon        = require('react-fa');
+var Button      = require('./Button');
+var ButtonGroup = require('./ButtonGroup');
 
 var Application = React.createClass({
 
   style: ReactStyle({
     backgroundColor: 'white',
-    fontSize: '11pt',
+    fontSize: '10pt',
     padding: '1em',
     children: {
       marginRight: '0.5em',
@@ -27,18 +28,23 @@ var Application = React.createClass({
     return (
       <div styles={this.style}>
         <h1>Applicaiton</h1>
-        <Button style={Button.styles.success}>
+        <Button styles={Button.styles.success}>
           <Icon name="cog" /> OK
         </Button>
-        <Button style={Button.styles.error}>
+        <Button styles={Button.styles.error}>
           <Icon name="remove" /> Cancel
         </Button>
-        <Button active>
-          Active
-        </Button>
-        <Button>
-          Button
-        </Button>
+        <ButtonGroup>
+          <Button>
+            <Icon name="align-left" /> Left
+          </Button>
+          <Button>
+            <Icon name="align-center" /> Center
+          </Button>
+          <Button>
+            <Icon name="align-right" /> Right
+          </Button>
+        </ButtonGroup>
       </div>
     );
   }

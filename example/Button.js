@@ -52,7 +52,7 @@ var style = ReactStyle({
   border: border(none, rgba(0, 0, 0, 0)),
   backgroundColor: '#E6E6E6',
   textDecoration: none,
-  borderRadius: '2px',
+  borderRadius: '6px',
   onActive: activeStyle,
   onHover: hoverStyle,
   onFocus: focusStyle
@@ -60,12 +60,12 @@ var style = ReactStyle({
 
 var Button = React.createClass({
 
-  render: function() {
+  render() {
     var styles = [
       baseStyle,
       style,
       this.props.active && activeStyle
-    ].concat(this.props.style);
+    ].concat(this.props.styles);
     return (
       <button styles={styles}>
         {this.props.children}

@@ -5,9 +5,12 @@
 
 var React       = require('react');
 var ReactStyle  = require('react-style');
-var {rgba}      = require('react-style/lib/utils');
+var {
+  none, stop, transparent,
+  rgba, rgb, linearGradient
+} = require('react-style/lib/utils');
 
-var baseStyles = ReactStyle({
+var baseStyle = ReactStyle({
   display: 'inline-block',
   zoom: 1,
   lineHeight: 'normal',
@@ -15,46 +18,58 @@ var baseStyles = ReactStyle({
   verticalAlign: 'baseline',
   textAlign: 'center',
   cursor: 'pointer',
-  userSelect: 'none'
+  userSelect: none
 });
 
-var activeStyles = ReactStyle({
+var activeStyle = ReactStyle({
   boxShadow: '0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset'
 });
 
-var hoverStyles = ReactStyle({
-  backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))'
+var hoverStyle = ReactStyle({
+  backgroundImage: linearGradient(
+                     transparent,
+                     stop(rgba(0,0,0, 0.05), '40%'),
+                     rgba(0,0,0, 0.10))
 });
 
-var focusStyles = ReactStyle({
-  backgroundImage: 'linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10))',
-  outline: 'none'
+var focusStyle = ReactStyle({
+  backgroundImage: linearGradient(
+                     transparent,
+                     stop(rgba(0,0,0, 0.05), '40%'),
+                     rgba(0,0,0, 0.10)),
+  outline: none
 });
 
-var styles = ReactStyle({
+var style = ReactStyle({
   fontFamily: 'inherit',
   fontSize: '100%',
   padding: '0.5em 1em',
   color: rgba(0, 0, 0, 0.80),
   border: 'none rgba(0, 0, 0, 0)',
   backgroundColor: '#E6E6E6',
-  textDecoration: 'none',
+  textDecoration: none,
   borderRadius: '2px',
-  onActive: activeStyles,
-  onHover: hoverStyles,
-  onFocus: focusStyles
+  onActive: activeStyle,
+  onHover: hoverStyle,
+  onFocus: focusStyle
 });
 
-var primaryStyles = ReactStyle({
-  backgroundColor: 'rgb(0, 120, 231)',
+var primaryStyle = ReactStyle({
+  backgroundColor: rgb(0, 120, 231),
   color: '#fff'
 });
 
 var Button = React.createClass({
 
   render: function() {
+    var styles = [
+      baseStyle,
+      style,
+      this.props.primary && primaryStyle,
+      this.props.active && activeStyle
+    ];
     return (
-      <button styles={[baseStyles, styles, this.props.primary && primaryStyles]}>
+      <button styles={styles}>
         {this.props.children}
       </button>
     );

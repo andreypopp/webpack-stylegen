@@ -25,6 +25,9 @@ var Application = React.createClass({
         <Button>
           <Icon name="remove" /> Cancel
         </Button>
+        <Button active>
+          Active
+        </Button>
       </div>
     );
   }

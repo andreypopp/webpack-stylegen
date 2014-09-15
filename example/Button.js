@@ -66,7 +66,7 @@ var Button = React.createClass({
       style,
       this.props.active && activeStyle
     ].concat(this.props.styles);
-    return (
+    return this.transferPropsTo(
       <button styles={styles}>
         {this.props.children}
       </button>

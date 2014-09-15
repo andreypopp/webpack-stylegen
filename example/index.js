@@ -12,6 +12,31 @@ var Icon        = require('react-fa');
 var Button      = require('./Button');
 var ButtonGroup = require('./ButtonGroup');
 
+var TextAlignSwitcher = React.createClass({
+
+  render() {
+    return (
+      <ButtonGroup>
+        <Button
+          active={this.props.textAlign === 'left'}
+          onClick={this.props.onTextAlign.bind(null, 'left')}>
+          <Icon name="align-left" /> Left
+        </Button>
+        <Button
+          active={this.props.textAlign === 'center'}
+          onClick={this.props.onTextAlign.bind(null, 'center')}>
+          <Icon name="align-center" /> Center
+        </Button>
+        <Button
+          active={this.props.textAlign === 'right'}
+          onClick={this.props.onTextAlign.bind(null, 'right')}>
+          <Icon name="align-right" /> Right
+        </Button>
+      </ButtonGroup>
+    );
+  }
+});
+
 var Application = React.createClass({
 
   style: ReactStyle({
@@ -24,9 +49,13 @@ var Application = React.createClass({
     }
   }),
 
-  render: function() {
+  render() {
+    var styles = [
+      this.style,
+      ReactStyle({textAlign: this.state.textAlign})
+    ];
     return (
-      <div styles={this.style}>
+      <div styles={styles}>
         <h1>Applicaiton</h1>
         <Button styles={Button.styles.success}>
           <Icon name="cog" /> OK
@@ -34,19 +63,20 @@ var Application = React.createClass({
         <Button styles={Button.styles.error}>
           <Icon name="remove" /> Cancel
         </Button>
-        <ButtonGroup>
-          <Button>
-            <Icon name="align-left" /> Left
-          </Button>
-          <Button>
-            <Icon name="align-center" /> Center
-          </Button>
-          <Button>
-            <Icon name="align-right" /> Right
-          </Button>
-        </ButtonGroup>
+        <TextAlignSwitcher
+          textAlign={this.state.textAlign}
+          onTextAlign={this.onTextAlign}
+          />
       </div>
     );
+  },
+
+  getInitialState() {
+    return {textAlign: 'left'};
+  },
+
+  onTextAlign(textAlign) {
+    this.setState({textAlign});
   }
 
 });

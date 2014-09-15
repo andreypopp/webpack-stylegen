@@ -45,7 +45,9 @@ var Application = React.createClass({
     padding: '1em',
     children: {
       marginRight: '0.5em',
-      lastChild: {marginRight: 0}
+    },
+    lastChild: {
+      marginRight: 0
     }
   }),
 
@@ -56,17 +58,19 @@ var Application = React.createClass({
     ];
     return (
       <div styles={styles}>
-        <h1>Applicaiton</h1>
-        <Button styles={Button.styles.success}>
-          <Icon name="cog" /> OK
-        </Button>
-        <Button styles={Button.styles.error}>
-          <Icon name="remove" /> Cancel
-        </Button>
-        <TextAlignSwitcher
-          textAlign={this.state.textAlign}
-          onTextAlign={this.onTextAlign}
-          />
+        {ReactStyle.styleChildren([
+          <h1>Applicaiton</h1>,
+          <Button styles={Button.styles.success}>
+            <Icon name="cog" /> OK
+          </Button>,
+          <Button styles={Button.styles.error}>
+            <Icon name="remove" /> Cancel
+          </Button>,
+          <TextAlignSwitcher
+            textAlign={this.state.textAlign}
+            onTextAlign={this.onTextAlign}
+            />
+          ], this.style)}
       </div>
     );
   },

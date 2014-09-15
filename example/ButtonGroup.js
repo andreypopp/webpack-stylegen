@@ -12,29 +12,23 @@ var ButtonGroup = React.createClass({
     display: 'inline-block',
     children: {
       margin: 0,
-      notLastChild: {
-        notFirstChild: {
-          borderRadius: 0
-        }
-      },
-      firstChild: {
-        notLastChild: {
-          borderTopRightRadius: 0,
-          borderBottomRightRadius: 0
-        }
-      },
-      lastChild: {
-        notFirstChild: {
-          borderTopLeftRadius: 0,
-          borderBottomLeftRadius: 0
-        }
-      }
+      borderRadius: 0
+    },
+    firstChild: {
+      margin: 0,
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0
+    },
+    lastChild: {
+      margin: 0,
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0
     }
   }),
 
   render() {
     var styles = [this.style, this.props.styles];
-    return <div styles={styles}>{this.props.children}</div>;
+    return <div styles={styles}>{ReactStyle.styleChildren(this.props.children, this.style)}</div>;
   }
 });
 

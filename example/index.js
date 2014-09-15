@@ -57,7 +57,7 @@ var Application = React.createClass({
       ReactStyle({textAlign: this.state.textAlign})
     ];
     return ReactStyle.style(styles,
-      <div styles={styles}>
+      <div>
         <h1>Applicaiton</h1>
         <Button styles={Button.styles.success}>
           <Icon name="cog" /> OK

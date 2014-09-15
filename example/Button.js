@@ -52,7 +52,7 @@ var style = ReactStyle({
   border: border(none, rgba(0, 0, 0, 0)),
   backgroundColor: '#E6E6E6',
   textDecoration: none,
-  borderRadius: '6px',
+  borderRadius: '3px',
   onActive: activeStyle,
   onHover: hoverStyle,
   onFocus: focusStyle

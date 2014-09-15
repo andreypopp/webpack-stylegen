@@ -3,8 +3,7 @@
  */
 'use strict';
 
-var React           = require('react/addons');
-var cloneWithProps  = React.addons.cloneWithProps;
+var React           = require('react');
 var ReactStyle      = require('react-style');
 
 var ButtonGroup = React.createClass({
@@ -34,7 +33,8 @@ var ButtonGroup = React.createClass({
   }),
 
   render() {
-    return <div styles={this.style}>{this.props.children}</div>;
+    var styles = [this.style, this.props.styles];
+    return <div styles={styles}>{this.props.children}</div>;
   }
 });
 

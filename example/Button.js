@@ -6,23 +6,27 @@
 var React       = require('react');
 var ReactStyle  = require('react-style');
 var {
-  none, stop, transparent,
-  rgba, rgb, linearGradient
+  none, stop, transparent, inset, pointer, center, nowrap, baseline, normal,
+  inherit, inlineBlock,
+  rgba, rgb, linearGradient,
+  shadows, shadow, border, padding
 } = require('react-style/lib/utils');
 
 var baseStyle = ReactStyle({
-  display: 'inline-block',
+  display: inlineBlock,
   zoom: 1,
-  lineHeight: 'normal',
-  whiteSpace: 'nowrap',
-  verticalAlign: 'baseline',
-  textAlign: 'center',
-  cursor: 'pointer',
+  lineHeight: normal,
+  whiteSpace: nowrap,
+  verticalAlign: baseline,
+  textAlign: center,
+  cursor: pointer,
   userSelect: none
 });
 
 var activeStyle = ReactStyle({
-  boxShadow: '0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset'
+  boxShadow: shadow(
+               {blur: '1px', color: rgba(0, 0, 0, 0.15), type: inset},
+               {blur: '6px', color: rgba(0, 0, 0, 0.20), type: inset})
 });
 
 var hoverStyle = ReactStyle({
@@ -41,11 +45,11 @@ var focusStyle = ReactStyle({
 });
 
 var style = ReactStyle({
-  fontFamily: 'inherit',
+  fontFamily: inherit,
   fontSize: '100%',
-  padding: '0.5em 1em',
+  padding: padding('0.5em', '1em'),
   color: rgba(0, 0, 0, 0.80),
-  border: 'none rgba(0, 0, 0, 0)',
+  border: border(none, rgba(0, 0, 0, 0)),
   backgroundColor: '#E6E6E6',
   textDecoration: none,
   borderRadius: '2px',
@@ -67,7 +71,7 @@ var Button = React.createClass({
       style,
       this.props.primary && primaryStyle,
       this.props.active && activeStyle
-    ];
+    ].concat(this.props.style);
     return (
       <button styles={styles}>
         {this.props.children}

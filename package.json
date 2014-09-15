@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "license": "MIT",
+  "peerDependencies": {
+    "extract-text-webpack-plugin": "^0.3.1",
+    "react": "^0.11.1"
+  },
   "dependencies": {
-    "extract-text-webpack-plugin": "^0.3.0",
-    "react": "^0.11.1",
     "recast": "^0.7.2"
   }
 }

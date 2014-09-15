@@ -8,9 +8,8 @@ var ReactStyle      = require('react-style');
 
 var ButtonGroup = React.createClass({
 
-  style: ReactStyle({
-    display: 'inline-block',
-    children: {
+  childStyles: {
+    Button: ReactStyle({
       margin: 0,
       notLastChild: {
         notFirstChild: {
@@ -29,7 +28,11 @@ var ButtonGroup = React.createClass({
           borderBottomLeftRadius: 0
         }
       }
-    }
+    })
+  },
+
+  style: ReactStyle({
+    display: 'inline-block'
   }),
 
   render() {

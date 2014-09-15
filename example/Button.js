@@ -58,18 +58,12 @@ var style = ReactStyle({
   onFocus: focusStyle
 });
 
-var primaryStyle = ReactStyle({
-  backgroundColor: rgb(0, 120, 231),
-  color: '#fff'
-});
-
 var Button = React.createClass({
 
   render: function() {
     var styles = [
       baseStyle,
       style,
-      this.props.primary && primaryStyle,
       this.props.active && activeStyle
     ].concat(this.props.style);
     return (

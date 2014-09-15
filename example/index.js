@@ -11,6 +11,11 @@ var {rgb}      = require('react-style/lib/utils');
 var Icon       = require('react-fa');
 var Button     = require('./Button');
 
+var primary = ReactStyle({
+  backgroundColor: rgb(0, 120, 231),
+  color: '#fff'
+});
+
 var success = ReactStyle({
   color: 'white',
   background: rgb(28, 184, 65)
@@ -25,7 +30,6 @@ var Application = React.createClass({
 
   style: ReactStyle({
     backgroundColor: 'white',
-    fontFamily: '"Myriad Pro", sans-serif',
     padding: '1em'
   }),
 
@@ -33,7 +37,7 @@ var Application = React.createClass({
     return (
       <div styles={this.style}>
         Applicaiton
-        <Button primary style={success}>
+        <Button style={success}>
           <Icon name="cog" /> OK
         </Button>
         <Button style={error}>

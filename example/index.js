@@ -56,21 +56,19 @@ var Application = React.createClass({
       this.style,
       ReactStyle({textAlign: this.state.textAlign})
     ];
-    return (
+    return ReactStyle.style(styles,
       <div styles={styles}>
-        {ReactStyle.styleChildren([
-          <h1>Applicaiton</h1>,
-          <Button styles={Button.styles.success}>
-            <Icon name="cog" /> OK
-          </Button>,
-          <Button styles={Button.styles.error}>
-            <Icon name="remove" /> Cancel
-          </Button>,
-          <TextAlignSwitcher
-            textAlign={this.state.textAlign}
-            onTextAlign={this.onTextAlign}
-            />
-          ], this.style)}
+        <h1>Applicaiton</h1>
+        <Button styles={Button.styles.success}>
+          <Icon name="cog" /> OK
+        </Button>
+        <Button styles={Button.styles.error}>
+          <Icon name="remove" /> Cancel
+        </Button>
+        <TextAlignSwitcher
+          textAlign={this.state.textAlign}
+          onTextAlign={this.onTextAlign}
+          />
       </div>
     );
   },

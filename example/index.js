@@ -19,7 +19,7 @@ var Application = React.createClass({
     padding: '1em',
     children: {
       marginRight: '0.5em',
-      last: {marginRight: 0}
+      lastChild: {marginRight: 0}
     }
   }),
 

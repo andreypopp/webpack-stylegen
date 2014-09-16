@@ -8,6 +8,12 @@
     "extract-text-webpack-plugin": "^0.3.1",
     "react": "^0.11.1"
   },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^0.3.1",
+    "jsx-loader": "^0.11.0",
+    "react": "^0.11.1",
+    "webpack": "^1.4.0-beta8"
+  },
   "dependencies": {
     "recast": "^0.7.2"
   }

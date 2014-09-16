@@ -30,6 +30,7 @@ var activeStyle = ReactStyle({
 });
 
 var hoverStyle = ReactStyle({
+  color: '#000',
   backgroundImage: linearGradient(
                      transparent,
                      stop(rgba(0,0,0, 0.05), '40%'),
@@ -48,7 +49,7 @@ var style = ReactStyle({
   fontFamily: inherit,
   fontSize: '100%',
   padding: padding('0.5em', '1em'),
-  color: rgba(0, 0, 0, 0.80),
+  color: rgba(0, 0, 0, 0.70),
   border: border(none, rgba(0, 0, 0, 0)),
   backgroundColor: '#E6E6E6',
   textDecoration: none,
